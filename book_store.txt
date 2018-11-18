@@ -19,7 +19,7 @@ price decimal not null,
 CREATE TABLE genre (
 id int not null primary key,
 name varchar (40) not null,
-description varchar (100) not null
+description varchar (200) not null
 );
 
 CREATE TABLE pub_house (
@@ -29,16 +29,16 @@ name varchar (40) not null
 
 CREATE TABLE series (
 id int not null primary key,
-name varchar not null,
+name varchar (40) not null,
 );
 
 CREATE TABLE author(
 id int not null primary key,
-first_name varchar not null,
-last_name varchar not null,
-full_name varchar not null,
+first_name varchar (40) not null,
+last_name varchar (40) not null,
+full_name varchar (40) not null,
 birth_date date not null,
-country varchar not null
+country varchar (40) not null
 );
 
 CREATE TABLE basket(
@@ -70,8 +70,6 @@ alter table books add constraint FK_books_pub_house foreign key (pub_house_id) r
 
 alter table books add constraint FK_books_series foreign key (series_id) references series(id)
 
-alter table books add constraint FK_books_orders foreign key (id) references orders(id)
-
 alter table books add constraint FK_books_author foreign key (author_id) references author(id)
 
 alter table books add constraint FK_books_basket foreign key (id) references basket(id);
@@ -80,58 +78,55 @@ alter table orders add constraint FK_orders_customer foreign key (customer_id) r
 
 alter table orders add constraint FK_orders_employee foreign key (employee_id) references employee(id);
 
+alter table basket add constraint FK_basket_orders foreign key (order_id) references orders(id);
 
 
-
-
-
-
-
-
-
-
-insert into books 
+insert into books (id, author_id, genre_id, bub_house_id, series_id, title, price)
 values ('1', '1', '4', '1', '3', 'Три мушкетери', '72');
-insert into books 
+insert into books  (id, author_id, genre_id, bub_house_id, series_id, title, price)
 values ('3', '2', '5', '2', '2', 'Євгеній Онєгін', '62');
-insert into books 
+insert into books  (id, author_id, genre_id, bub_house_id, series_id, title, price)
 values ('4', '2', '10', '3', '4', 'Мідний вершник', '46');
-insert into books 
+insert into books  (id, author_id, genre_id, bub_house_id, series_id, title, price)
 values ('6', '3', '2', '4', '5', 'На днях землетрус в Легоні', '63');
-insert into books 
+insert into books  (id, author_id, genre_id, bub_house_id, series_id, title, price)
 values ('8', '3', '2', '5', '6', 'Підземелля відьом', '58');
-insert into books 
+insert into books  (id, author_id, genre_id, bub_house_id, series_id, title, price)
 values ('9', '4', '3', '5', '1', 'Таємничий супротивник', '64');
-insert into books 
+insert into books  (id, author_id, genre_id, bub_house_id, series_id, title, price)
 values ('11', '4', '3', '5', '7', 'Десять негритят', '83');
-insert into books 
+insert into books  (id, author_id, genre_id, bub_house_id, series_id, title, price)
 values ('13', '4', '3', '6', '8', 'Пуаро веде розслідування', '68');
-insert into books 
+insert into books  (id, author_id, genre_id, bub_house_id, series_id, title, price)
 values ('16', '5', '3', '7', '9', 'Повна збірка оповідань про Шерлока', '85');
-insert into books 
+insert into books  (id, author_id, genre_id, bub_house_id, series_id, title, price)
 values ('17', '6', '4', '8', '1', 'Діти капітана Гранта', '77');
-insert into books 
+insert into books  (id, author_id, genre_id, bub_house_id, series_id, title, price)
 values ('18', '6', '4', '9', '1', '20 тисяч льє під водою', '85');
-insert into books 
+insert into books  (id, author_id, genre_id, bub_house_id, series_id, title, price)
 values ('20', '6', '4', '10', '1', 'Таємничий острів', '69');
-insert into books 
-values ('22', '6', '4', '11', '1', 'П'ятнадцятирічний капітан', '81');
-insert into books 
+insert into books  (id, author_id, genre_id, bub_house_id, series_id, title, price)
+values ('22', '6', '4', '11', '1', 'П''ятнадцятирічний капітан', '81');
+insert into books  (id, author_id, genre_id, bub_house_id, series_id, title, price)
 values ('23', '7', '10', '5', '1', 'Анна Кареніна', '82');
-insert into books 
+insert into books  (id, author_id, genre_id, bub_house_id, series_id, title, price)
 values ('24', '7', '6', '10', '1', 'Заметіль', '68');
-insert into books 
+insert into books  (id, author_id, genre_id, bub_house_id, series_id, title, price)
 values ('25', '8', '7', '8', '1', 'Збірка віршів Анни Ахматової ', '73');
-insert into books 
+insert into books  (id, author_id, genre_id, bub_house_id, series_id, title, price)
 values ('27', '9', '7', '12', '11', 'Вірші і поеми', '69');
-insert into books 
+insert into books  (id, author_id, genre_id, bub_house_id, series_id, title, price)
 values ('28', '10', '9', '5', '1', 'Як припинити турбуватись і розпочати життя', '57');
-insert into books 
+insert into books  (id, author_id, genre_id, bub_house_id, series_id, title, price)
 values ('30', '11', '8', '13', '1', 'Золотий ключик або пригоди Буратіно', '67');
 
 
 
 
+
+
+insert into author (id, first_name, last_name, full_name, birth_date, country)
+values('1','Олександр','Дюма','Олександр Дюма','1802-05-02','Франція');
 
 
 insert into author
@@ -141,7 +136,7 @@ values('2','Олександр','Пушкін','Олександр Сергійович Пушкін','1799-06-06','Росі
 insert into author
 values('3','Кір','Буличов','Кір Буличов','1934-10-18','Росія');
 insert into author
-values('4','Агата Мері','Міллер',Агата Мері Кларисса Міллер','1890-0918','Велика Британія');
+values('4','Агата Мері','Міллер', 'Агата Мері Кларисса Міллер','1890-0918','Велика Британія');
 insert into author
 values('5','Артур','Дойль','Артут Игнатус Конан Дойль','1895-05-22','Велика Британія');
 insert into author
@@ -157,73 +152,73 @@ values('10','Дейл','Карнеги','Дейл Брекенридж Карнеги','1888-11-24','США');
 insert into author
 values('11','Олексій','Толстой','Олексій Миколайович Толстой','1883-01-10','Росія')
 
-insert into pub_house
+insert into pub_house (id, name)
 values('1','Альфа-книга');
-insert into pub_house
+insert into pub_house (id, name)
 values('2','Азбука-класика');
-insert into pub_house
+insert into pub_house (id, name)
 values('3','Старий Лев');
-insert into pub_house
+insert into pub_house (id, name)
 values('4','АРС');
-insert into pub_house
+insert into pub_house (id, name)
 values('5','Ексмо');
-insert into pub_house
+insert into pub_house (id, name)
 values('6','Центрполіграф');
-insert into pub_house
+insert into pub_house (id, name)
 values('7','Клуб Сімейного Дозвілля');
-insert into pub_house
+insert into pub_house (id, name)
 values('8','Зелений пес');
-insert into pub_house
+insert into pub_house (id, name)
 values('9','Бімпа');
-insert into pub_house
+insert into pub_house (id, name)
 values('10','Дитяча література');
-insert into pub_house
+insert into pub_house (id, name)
 values('11','РІО');
-insert into pub_house
+insert into pub_house (id, name)
 values('12','Профвидав');
-insert into pub_house
+insert into pub_house (id, name)
 values('13','АСТ')
 
-insert into genre
+insert into genre (id, name, description)
 values('2','Фантастика та фентезі','За допомогою додавання вигаданих, уявних елементів створюється світ, відмінний від сьогоденного, реального');
-insert into genre
-values('3','Детектив','Різновид творів масової культури в яких розкривається певна таємниця, пов'язана зі злочином');
-insert into genre
+insert into genre (id, name, description)
+values('3','Детектив','Різновид творів масової культури в яких розкривається певна таємниця, пов''язана зі злочином');
+insert into genre (id, name, description)
 values('4','Пригоди','Жанр, сюжети творів якого насичені незвичайними подіями й характеризується їхнім несподіваним поворотом, великою динамікою розгортання');
-insert into genre
+insert into genre (id, name, description)
 values('5','Роман у віршах','Різновид ліро-епічного (змішаного) жанру, у якому поєднані особливості і ліричного, і епічного зображень, що веде до багатоплановості художнього світу');
-insert into genre
-values('6','Повість','літературний прозовий твір середньої форми, довший за оповідання, але коротший за роман, під відповідною назвою поширений у слов'янських мовах та країнах');
-insert into genre
+insert into genre (id, name, description)
+values('6','Повість','літературний прозовий твір середньої форми, довший за оповідання, але коротший за роман, під відповідною назвою поширений у слов''янських мовах та країнах');
+insert into genre (id, name, description)
 values('7','Поезія','Художньо-образна словесна творчість, в якій мова використовується з естетичною чи евокативною метою окрім або замість самої денотації');
-insert into genre
+insert into genre (id, name, description)
 values('8','Дитяча література','Література, творена безпосередньо дітьми або для дітей');
-insert into genre
+insert into genre (id, name, description)
 values('9','Нон-фікшн','Нехудожня література, в якій в основному розповідається про події з реальні факти з життя людей та історії');
-insert into genre
+insert into genre (id, name, description)
 values('10','Поеми','Ліричний, епічний, ліро-епічний твір, переважно віршований, у якому зображені значні події і яскраві характери');
-insert into genre
+insert into genre (id, name, description)
 values('11','Соціально психологічний роман','В складних, часто в екстремальних життєвих ситуаціях розкриваються багатогранні характери героїв з усім розмаїттям їхнього психологічного функціонування в контексті соціального середовища')
 
-insert into series
+insert into series (id, name)
 values('1','Поза серією');
-insert into series
+insert into series (id, name)
 values('2','Азбука-Класика');
-insert into series
+insert into series (id, name)
 values('3','Зарубіжна класика');
-insert into series
+insert into series (id, name)
 values('4','Літературні пам'ятки');
-insert into series
+insert into series (id, name)
 values('5','Бібліотека пригод');
-insert into series
+insert into series (id, name)
 values('6','Російська класика');
-insert into series
+insert into series (id, name)
 values('7','Агата Крісті');
-insert into series
+insert into series (id, name)
 values('8','Еркюль Пуаро');
-insert into series
+insert into series (id, name)
 values('9','Повне зібрання в одному томі');
-insert into series
+insert into series (id, name)
 values('10','Pocket Book');
-insert into series
+insert into series (id, name)
 values('11','Поезія ХХ століття')

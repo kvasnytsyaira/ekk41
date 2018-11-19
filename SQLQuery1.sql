@@ -35,7 +35,7 @@ id int not null primary key,
 first_name varchar (40) not null,
 last_name varchar (40) not null,
 full_name varchar (40),
-birth_date date,
+birth_date datetime,
 country varchar (40)
 );
 
@@ -75,13 +75,14 @@ alter table books add constraint FK_books_series foreign key (series_id) referen
 
 alter table books add constraint FK_books_author foreign key (author_id) references author(id)
 
-alter table books add constraint FK_books_basket foreign key (id) references basket(id);
+alter table basket add constraint FK_basket_books foreign key (book_id) references books(id);
 
 alter table orders add constraint FK_orders_customer foreign key (customer_id) references customer(id);
 
 alter table orders add constraint FK_orders_employee foreign key (employee_id) references employee(id);
 
 alter table basket add constraint FK_basket_orders foreign key (order_id) references orders(id);
+
 
 insert into author
 values('1','Олександр','Дюма','Олександр Дюма','1802-06-24','Франція');
@@ -175,7 +176,7 @@ values('9','Повне зібрання в одному томі');
 insert into series (id, name)
 values('10','Pocket Book');
 insert into series (id, name)
-values('11','Поезія ХХ століття');
+values('11','Поезія ХХ століття')
 
 insert into customer (id, first_name, last_name)
 values('1', 'Єлісов', 'Микола');
@@ -202,23 +203,24 @@ insert into employee (id, first_name, last_name, address)
 values('6', 'Білець', 'Юрій', 'вул.Зелена, 200')
 
 insert into orders (id, customer_id, employee_id, parcel_number, ordertime)
-values('2', '1', '1', '1А-1', '2018-05-13 10:34:09');
+values('2', '1', '1', '1А-1', '2018-05-13 10:34:09')
 insert into orders (id, customer_id, employee_id, parcel_number, ordertime)
-values('3', '1', '2', '2Б-2', '2018-05-13 12:44:19');
+values('3', '1', '2', '2Б-2', '2018-05-13 12:44:19')
 insert into orders (id, customer_id, employee_id, parcel_number, ordertime)
-values('4', '2', '3', '3В-3', '2018-05-13 14:47:12');
+values('4', '2', '3', '3В-3', '2018-05-13 14:47:12')
 insert into orders (id, customer_id, employee_id, parcel_number, ordertime)
-values('5', '3', '3', '4Г-4', '2018-05-13 14:57:54');
+values('5', '3', '3', '4Г-4', '2018-05-13 14:57:54')
 insert into orders (id, customer_id, employee_id, parcel_number, ordertime)
-values('6', '4', '4', '5Д-5', '2018-05-13 16:02:23');
+values('6', '4', '4', '5Д-5', '2018-05-13 16:02:23')
 insert into orders (id, customer_id, employee_id, parcel_number, ordertime)
-values('7', '5', '5', '6А-6', '2018-05-13 17:34:35');
+values('7', '5', '5', '6А-6', '2018-05-13 17:34:35')
 insert into orders (id, customer_id, employee_id, parcel_number, ordertime)
-values('8', '6', '1', '7Б-7', '2018-05-14 09:19:57');
+values('8', '4', '1', '7Б-7', '2018-05-14 09:19:57')
 insert into orders (id, customer_id, employee_id, parcel_number, ordertime)
-values('9', '1', '3', '8В-8', '2018-05-14 14:25:54');
+values('9', '1', '3', '8В-8', '2018-05-14 14:25:54')
 insert into orders (id, customer_id, employee_id, parcel_number, ordertime)
 values('10', '2', '1', '9Г-9', '2018-05-14 16:54:12')
+
 
 insert into basket (id, order_id, book_id, number)
 values('1', '2', '1', '20');
@@ -263,7 +265,6 @@ values('20', '10', '28', '34');
 insert into basket (id, order_id, book_id, number)
 values('21', '10', '30', '35')
 
-
 insert into books (id, author_id, genre_id, pub_house_id, series_id, title, price)
 values ('1', '1', '4', '1', '3', 'Три мушкетери', '72.25');
 insert into books  (id, author_id, genre_id, pub_house_id, series_id, title, price)
@@ -288,7 +289,6 @@ insert into books  (id, author_id, genre_id, pub_house_id, series_id, title, pri
 values ('18', '6', '4', '9', '1', '20 тисяч льє під водою', '85.50');
 insert into books  (id, author_id, genre_id, pub_house_id, series_id, title, price)
 values ('20', '6', '4', '10', '1', 'Таємничий острів', '69.90');
-
 insert into books  (id, author_id, genre_id, pub_house_id, series_id, title, price)
 values ('23', '7', '10', '5', '1', 'Анна Кареніна', '82.95');
 insert into books  (id, author_id, genre_id, pub_house_id, series_id, title, price)
@@ -301,3 +301,48 @@ insert into books  (id, author_id, genre_id, pub_house_id, series_id, title, pri
 values ('28', '10', '9', '5', '1', 'Як припинити турбуватись і розпочати життя', '57.35');
 insert into books  (id, author_id, genre_id, pub_house_id, series_id, title, price)
 values ('30', '11', '8', '13', '1', 'Золотий ключик або пригоди Буратіно', '67.83');
+
+
+
+insert into basket (id, order_id, book_id, number)
+values('1', '2', '1', '20')
+insert into basket (id, order_id, book_id, number)
+values('2', '2', '3', '30')
+insert into basket (id, order_id, book_id, number)
+values('3', '3', '4', '20')
+insert into basket (id, order_id, book_id, number)
+values('4', '3', '6', '20')
+insert into basket (id, order_id, book_id, number)
+values('5', '4', '8', '40')
+insert into basket (id, order_id, book_id, number)
+values('6', '4', '9', '30')
+insert into basket (id, order_id, book_id, number)
+values('7', '5', '1', '20')
+insert into basket (id, order_id, book_id, number)
+values('8', '5', '3', '20')
+insert into basket (id, order_id, book_id, number)
+values('9', '5', '11', '20')
+insert into basket (id, order_id, book_id, number)
+values('10', '6', '13', '20')
+insert into basket (id, order_id, book_id, number)
+values('11', '6', '16', '25')
+insert into basket (id, order_id, book_id, number)
+values('12', '7', '17', '35')
+insert into basket (id, order_id, book_id, number)
+values('13', '7', '18', '35')
+insert into basket (id, order_id, book_id, number)
+values('14', '8', '20', '23')
+insert into basket (id, order_id, book_id, number)
+values('15', '8', '22', '22')
+insert into basket (id, order_id, book_id, number)
+values('16', '9', '23', '20')
+insert into basket (id, order_id, book_id, number)
+values('17', '9', '24', '29')
+insert into basket (id, order_id, book_id, number)
+values('18', '9', '25', '35')
+insert into basket (id, order_id, book_id, number)
+values('19', '10', '27', '60')
+insert into basket (id, order_id, book_id, number)
+values('20', '10', '28', '34')
+insert into basket (id, order_id, book_id, number)
+values('21', '10', '30', '35')

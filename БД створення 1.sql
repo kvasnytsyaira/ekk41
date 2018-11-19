@@ -50,3 +50,28 @@ REFERENCES type_objects (id),
 CONSTRAINT fk_obj_ow FOREIGN KEY (id_owner)
 REFERENCES owners (id)
 )
+
+CREATE TABLE options_conditions
+(id nvarchar(8) NOT NULL CONSTRAINT prim_op_cond PRIMARY KEY,
+object_option nvarchar(50) NOT NULL)
+
+CREATE TABLE contracts
+(id nvarchar(8) NOT NULL CONSTRAINT prim_contr PRIMARY KEY, --ІД УГОДИ
+id_obj nvarchar(8) NOT NULL, --ІД ОБ'ЄКТА
+id_cl nvarchar(8) NOT NULL, -- ІД КЛІЄНТА 
+date_contr  nvarchar(15) NOT NULL,
+term nvarchar(5),
+ct_price  nvarchar(15) NOT NULL,
+CONSTRAINT fk_ct_o FOREIGN KEY (id_obj)
+REFERENCES objects (id),
+CONSTRAINT fk_ct_cl FOREIGN KEY (id_cl)
+REFERENCES clients (id)) 
+
+
+CREATE TABLE conditions
+(id_obj nvarchar(8),
+id_condit nvarchar(8),
+CONSTRAINT fk_c_obj FOREIGN KEY (id_obj)
+REFERENCES objects (id),
+CONSTRAINT fk_obj_lc FOREIGN KEY (id_condit)
+REFERENCES options_conditions (id))

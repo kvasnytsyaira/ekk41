@@ -36,7 +36,6 @@ CREATE TABLE author(
 id int not null primary key,
 first_name varchar (40) not null,
 last_name varchar (40) not null,
-full_name varchar (40),
 birth_date datetime,
 country varchar (40)
 );
@@ -87,27 +86,27 @@ alter table basket add constraint FK_basket_orders foreign key (order_id) refere
 
 
 insert into author
-values('1','Олександр','Дюма','Олександр Дюма','1802-06-24','Франція');
+values('1','Олександр','Дюма','1802-06-24','Франція');
 insert into author
-values('2','Олександр','Пушкін','Олександр Сергійович Пушкін','1799-06-06','Росія');
+values('2','Олександр','Пушкін','1799-06-06','Росія');
 insert into author
-values('3','Кір','Буличов','Кір Буличов','1934-10-18','Росія');
+values('3','Кір','Буличов','1934-10-18','Росія');
 insert into author
-values('4','Агата Мері','Міллер', 'Агата Мері Кларисса Міллер','1890-09-18','Велика Британія');
+values('4','Агата Мері','Міллер','1890-09-18','Велика Британія');
 insert into author
-values('5','Артур','Дойль','Артут Игнатус Конан Дойль','1895-05-22','Велика Британія');
+values('5','Артур','Дойль','1895-05-22','Велика Британія');
 insert into author
-values('6','Жюль','Верн','Жуль Верн','1828-02-08','Франція');
+values('6','Жюль','Верн','1828-02-08','Франція');
 insert into author
-values('7','Лев','Толстой','Лев Миколайович Толстой','1828-08-28','Росія');
+values('7','Лев','Толстой','1828-08-28','Росія');
 insert into author
-values('8','Анна','Ахматова','Анна Андріївна Ахматова','1889-06-11','Росія');
+values('8','Анна','Ахматова','1889-06-11','Росія');
 insert into author
-values('9','Сергій','Єсенін','Сергій Олександрович Єсенін','1895-10-03','Росія');
+values('9','Сергій','Єсенін','1895-10-03','Росія');
 insert into author
-values('10','Дейл','Карнеги','Дейл Брекенридж Карнеги','1888-11-24','США');
+values('10','Дейл','Карнеги','1888-11-24','США');
 insert into author
-values('11','Олексій','Толстой','Олексій Миколайович Толстой','1883-01-10','Росія')
+values('11','Олексій','Толстой','1883-01-10','Росія')
 
 insert into pub_house (id, name)
 values('1','Альфа-книга');
@@ -349,3 +348,8 @@ values('20', '10', '28', '34')
 insert into basket (id, order_id, book_id, number)
 values('21', '10', '30', '35')
 
+alter table customer 
+add column number int (10)
+update table customer 
+set number '0978763263'
+where id = '1';

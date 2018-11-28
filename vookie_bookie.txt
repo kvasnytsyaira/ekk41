@@ -9,6 +9,7 @@ Create table Orders (
   manager_id int not null,
 );
 
+
 Create table Tables (
 table_id int not null IDENTITY (1,1) primary key,
 capacity int not null,
@@ -106,19 +107,6 @@ INSERT INTO Orders (order_time, user_id, table_id, manager_id) VALUES('2018-11-1
 INSERT INTO Orders (order_time, user_id, table_id, manager_id) VALUES('2018-11-17 21:00:00', 39, 34, 12)
 INSERT INTO Orders (order_time, user_id, table_id, manager_id) VALUES('2018-11-17 21:30:00', 40, 1, 1); 
 
-SELECT * FROM Tables
-SELECT * FROM Orders
-
-Alter table Orders
-ADD discount int
-
-Alter table Orders
-Alter column discount float
-
-Update Orders
-Set discount = 0.2
-Where user_id = 3
-
 
 INSERT INTO Tables (capacity, place_id) VALUES (12, 7)
 INSERT INTO Tables (capacity, place_id) VALUES (2, 8)
@@ -133,8 +121,6 @@ INSERT INTO Tables (capacity, place_id) VALUES (9, 9)
 INSERT INTO Tables (capacity, place_id) VALUES (9, 9)
 INSERT INTO Tables (capacity, place_id) VALUES (4, 9); 
 
-SELECT * FROM Tables
-SELECT * FROM Users
 
 INSERT INTO Orders (order_time, user_id, table_id, manager_id) VALUES ('2018-11-10 15:30:00', 3, 1, 1)
 INSERT INTO Orders (order_time, user_id, table_id, manager_id) VALUES('2018-11-10 16:00:00', 2, 2, 1)
@@ -187,5 +173,51 @@ INSERT INTO Orders (order_time, user_id, table_id, manager_id) VALUES('2018-11-1
 INSERT INTO Orders (order_time, user_id, table_id, manager_id) VALUES('2018-11-17 21:00:00', 39, 34, 12)
 INSERT INTO Orders (order_time, user_id, table_id, manager_id) VALUES('2018-11-17 21:30:00', 40, 1, 1); 
 
-Delete from Orders
-Use master
+
+CREATE TABLE Manager(
+    manager_id int NOT NULL  IDENTITY(1,1) PRIMARY KEY ,
+    email NVARCHAR(100) NOT NULL ,
+    first_name NVARCHAR(100) NOT NULL ,
+    last_name NVARCHAR(100) NOT NULL ,
+    password NVARCHAR(100) NOT NULL ,
+    place_id int NOT NULL
+  );
+
+CREATE TABLE Places (
+  place_id int NOT NULL IDENTITY(1,1) PRIMARY KEY ,
+  specification NVARCHAR(100) NOT NULL ,
+  name NVARCHAR(100) NOT NULL ,
+  adress NVARCHAR(100) NOT NULL
+);
+
+ALTER TABLE Manager
+  ADD FOREIGN KEY (place_id) REFERENCES Places(place_id);
+
+ALTER TABLE Orders
+  ADD FOREIGN KEY (manager_id) REFERENCES Manager(manager_id);
+
+INSERT INTO Manager (email, first_name, last_name, password, place_id) VALUES ('v_pupkin@gmail.com','Vasya','Pupkin','admin1', 1);
+INSERT INTO Manager (email, first_name, last_name, password, place_id)VALUES ('k_ashanov@gmail.com', 'Kolya','Ashanov','admin2', 2);
+INSERT INTO Manager (email, first_name, last_name, password, place_id)VALUES ('s_dendy@gmail.com', 'Sergiy','Dendy', 'admin3',3);
+INSERT INTO Manager (email, first_name, last_name, password, place_id)VALUES('k_silpo@gmail.com','Katya','Silpo','admin4', 4);
+INSERT INTO Manager (email, first_name, last_name, password, place_id)VALUES('z_furla@gmail.com','Zoya','Furla','admin5', 5) ;
+INSERT INTO Manager (email, first_name, last_name, password, place_id)VALUES('v_p@gmail.com','Vas','Pupkin','admin6', 5);
+INSERT INTO Manager (email, first_name, last_name, password, place_id)VALUES('k_ashanovv@gmail.com', 'Kolya','Ashanov','admin7', 6);
+INSERT INTO Manager (email, first_name, last_name, password, place_id)VALUES('s_dendyewe@gmail.com', 'Sergiy','Dendy', 'admin8',7);
+INSERT INTO Manager (email, first_name, last_name, password, place_id)VALUES('a_silpova@gmail.com','Alla','Silpova','admin9', 7);
+INSERT INTO Manager (email, first_name, last_name, password, place_id)VALUES('n_nikiforov@gmail.com','Nikita','Nikiforov','admin10', 8);
+INSERT INTO Manager (email, first_name, last_name, password, place_id)VALUES('a_silla@gmail.com','Alina','Silla','admin11', 4);
+INSERT INTO Manager (email, first_name, last_name, password, place_id)VALUES('k_semenova@gmail.com','Katya','Semenova','admin12', 9);
+INSERT INTO Manager (email, first_name, last_name, password, place_id)VALUES('k_silpo@gmail.com','Kyrylo','Silpo','admin13', 2);
+INSERT INTO Manager (email, first_name, last_name, password, place_id)VALUES('z_furlova@gmail.com','Zoya','Furlova','admin14', 5) ;
+ 
+
+INSERT INTO Places  (specification, name, adress)  VALUES ('ukrainian', 'Sho', 'Kyiv')
+INSERT INTO Places  (specification, name, adress) VALUES ('italian', 'Sho', 'Kyiv')
+INSERT INTO Places  (specification, name, adress) VALUES ('ukrainian', 'Holodniy Mykola', 'Lviv')
+INSERT INTO Places  (specification, name, adress) VALUES  ('european', 'Eurazia', 'Kyiv')
+INSERT INTO Places  (specification, name, adress) VALUES  ('american', 'McDonalds', 'Lviv')
+INSERT INTO Places  (specification, name, adress) VALUES  ('italian', 'Tartufo', 'Lviv')
+INSERT INTO Places  (specification, name, adress) VALUES  ('american', 'Antrecot', 'Lviv')
+INSERT INTO Places  (specification, name, adress) VALUES  ('american', 'Love and Lviv', 'Lviv')
+INSERT INTO Places  (specification, name, adress) VALUES  ('american', 'Celentano', 'Kyiv') 

@@ -221,3 +221,57 @@ INSERT INTO Places  (specification, name, adress) VALUES  ('italian', 'Tartufo',
 INSERT INTO Places  (specification, name, adress) VALUES  ('american', 'Antrecot', 'Lviv')
 INSERT INTO Places  (specification, name, adress) VALUES  ('american', 'Love and Lviv', 'Lviv')
 INSERT INTO Places  (specification, name, adress) VALUES  ('american', 'Celentano', 'Kyiv') 
+
+CREATE TABLE Users (
+id int NOT NULL IDENTITY (1,1) PRIMARY KEY,
+email NVARCHAR(100) NOT NULL,
+first_name NVARCHAR(100) NOT NULL,
+last_name NVARCHAR(100) NOT NULL,
+password NVARCHAR(100) NOT NULL,
+username NVARCHAR(100) NOT NULL,
+status bit NOT NULL,
+);
+
+ALTER TABLE Orders
+ADD constraint fk_Orders_User  FOREIGN KEY (user_id) REFERENCES Users(id);
+
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('alexk@gmail.com', 'Olexandr', 'Koval', '1360xk', 'Alex14', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('72alinka@gmail.com', 'Alina', 'Sydir',  'pk7885h', 'alina_sydir', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('fedirvol@gmail.com', 'Fedir', 'Volovets',  '789J72', 'Fedir99', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('ninaolenych@gmail.com', 'Nina', 'Olenych',  'hjo879g98h', 'NinaO', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('max653@gmail.com', 'Maxim', 'Boyuchuk',  'op68gf754', 'Max_Boychuk', 02)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('kateryna9@gmail.com', 'Kateryna', 'Smolska',  '78sf86i2', 'Katya71', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('michaelsribnyy@gmail.com', 'Michael', 'Sribnyy',  'bbji390u4', 'Michael_S', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('evelina92@gmail.com', 'Evelina', 'Ryzhko',  '0gj75jk36', 'EvelinaRyzhko', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('fedirvol@gmail.com', 'Fedir', 'Volovets',  '789J72', 'Fedir99', 02)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('ivanholodnyj@gmail.com', 'Ivan', 'holodnyj',  'jp35wn7', 'Ivanh', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('taras_k5@gmail.com', 'Taras', 'Koshmovskyj',  '787208un', 'Taras85', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('pavloonishchuk@gmail.com', 'Pavlo', 'Onishchuk',  'kN87H33iu', 'Pasha2', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('nata_bobyk@gmail.com', 'Natalia', 'Bobyk',  'jhF34Sw7', 'Natalia00', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('borys977@gmail.com', 'Borys', 'Fedak',  'gn97vgh41', 'Borya', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('rostyslavan@gmail.com', 'Rostyslav', 'Antonovych',  '7980FD92', 'Rost_A', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('jekapronevych@gmail.com', 'Evgen', 'Pronevych',  'ih88865', 'Evgen_Pronevych', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('stepans49@gmail.com', 'Stepan', 'Sydir',  '872bf15', 'StepanS', 02)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('evelina92@gmail.com', 'Evelina', 'Ryzhko',  '0gj75jk36', 'EvelinaRyzhko', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('ihorklimuk@gmail.com', 'Ihor', 'Klimuk',  'l5457vp', 'IhorKlimuk', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('tetianaborysyuk@gmail.com', 'Tetiana', 'Borysyuk',  '9hhyf455', 'Tetiana_Borysyuk', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('mariag94@gmail.com', 'Maria', 'Goshta',  '6gjjh5UY', 'Mary_Goshta', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('anatoliymoroz@ukr.net', 'Anatoliy', 'Moroz',  'b7VC650j', 'Anatoliy_Moroz', 02)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('yanakuharets@gmail.com', 'Yana', 'Kuharets',  'hf785ss22', 'YanaK', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('olhavintun@gmail.com', 'Olha', 'Vintun',  'KX46d6f', 'OlhaV', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('andriygedz@gmail.com', 'Andriy', 'Gedz',  'ki29gt5', 'Andriy_Gedz', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('maxlymar76@gmail.com', 'Maxim', 'Lymar',  'h9467Bnre4', 'MaxLymar', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('volodkirneev@gmail.com', 'Volodymyr', 'Kirneev',  '3f5uke3T', 'Volodymyr_Kirneev', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('irinad29@gmail.com', 'Irina', 'Kostrykina',  '9rtUU6', 'Irina_Kostrykina', 02)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('bohdan_om@gmail.com', 'Bohdan', 'Omeliyanchuk',  'gk53Cr32', 'BohdanO', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('vasylbroj@ukr.net', 'Vasyl', 'Broj',  '4h9ffUw3', 'Vasyl_Broy', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('oleksiyk9@gmail.com', 'Oleksiy', 'Kovalchuk',  'bfh7FR', 'OleksiyK', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('eduardmyr@gmail.com', 'Eduard', 'Myronchuk',  'Khgy7bf7', 'Eduard_M', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('marinadr@gmail.com', 'Marina', 'Druzhko',  'mo790gT8', 'MarinaD', 02)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('borysvelikiy@gmail.com', 'Borys', 'Velikiy',  'mkj56Fw2', 'BorysVelikiy', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('volodymyr_t@gmail.com', 'Volodymyr', 'Topolya',  'Lhg7F345', 'Vova_Topolya', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('alinavoronina@gmail.com', 'Alina', 'Voronina',  'lr85fds08', 'AlinaV', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('ivansokolenko@ukr.net', 'Ivan', 'Sokolenko',  '8t6uytRE', 'IvanSokolenko', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('denisr42@gmail.com', 'Denis', 'Rybikov',  '56mgf9H', 'Denis_Rybikov', 01)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('mariamuravska@gmail.com', 'Maria', 'Muravska',  'khg8fgI', 'mariaM', 02)
+INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('viktorfed@gmail.com', 'Viktor', 'Fedoranych',  'kikh765L', 'ViktorF', 01)

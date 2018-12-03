@@ -275,3 +275,58 @@ INSERT INTO Users (email, first_name, last_name, password,username, status)  VAL
 INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('denisr42@gmail.com', 'Denis', 'Rybikov',  '56mgf9H', 'Denis_Rybikov', 01)
 INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('mariamuravska@gmail.com', 'Maria', 'Muravska',  'khg8fgI', 'mariaM', 02)
 INSERT INTO Users (email, first_name, last_name, password,username, status)  VALUES ('viktorfed@gmail.com', 'Viktor', 'Fedoranych',  'kikh765L', 'ViktorF', 01)
+
+
+CREATE TABLE Waiters (
+  waiter_id int  not null IDENTITY(1,1),
+  email NVARCHAR(100) NOT NULL ,
+  first_name NVARCHAR(100) NOT NULL ,
+  last_name NVARCHAR(100) NOT NULL ,
+  waiter_password NVARCHAR(100) NOT NULL ,
+  place_id int NOT NULL,
+  order_id int NOT NULL,
+  primary key (waiter_id)
+);
+
+ALTER TABLE Waiters
+  ADD FOREIGN KEY (place_id) REFERENCES Places(place_id);
+
+ALTER TABLE Waiters
+  ADD FOREIGN KEY (order_id) REFERENCES Orders(order_id);
+
+select * from Places
+
+
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('s_orechov@gmail.com', 'Sasha', 'Orechov', 'waiter2', 1, 3)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('m_kvitka@gmail.com', 'Mariya', 'Kvitka', 'waiter3', 2, 5)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('g_malachov@gmail.com', 'Grigoriy', 'Malachov', 'waiter4', 3, 7)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('kate123@gmail.com', 'Katerina', 'Nemirova', 'waiter5', 3, 9)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('vika_iva@gmail.com', 'Viktoria', 'Ivanova', 'waiter6', 4, 11)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('k_och@gmail.com', 'Katerina', 'Ochmak', 'waiter7', 4, 13)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('anna_shilo@gmail.com', 'Anna', 'Shilyaeva', 'waiter8', 5, 15)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('martinez@gmail.com', 'Marina', 'Martinez', 'waiter9', 5, 16)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('gerasimchuk@gmail.com', 'Artem', 'Gerasimchuk', 'waiter10', 6, 17)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('taras_benko@gmail.com', 'Taras', 'Benko', 'waiter11', 7, 19)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('marina_korn@gmail.com', 'Marina', 'Kornijchuk', 'waiter12', 7, 20)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('mariya_yaschenko@gmail.com', 'Mariya', 'Yaschenko', 'waiter13', 7, 23)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('galya123@gmail.com', 'Galina', 'Voloshn', 'waiter14', 8, 26)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('koltun@gmail.com', 'Koltun', 'Cruz', 'waiter15', 8, 28)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('anya_koltun@gmail.com', 'Anna', 'Koltun', 'waiter16', 9, 30)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('Nazar_norm@gmail.com', 'Nazar', 'Ostashuk', 'waiter17', 9, 31)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('and@gmail.com', 'Andriy', 'Petrikov', 'waiter18', 1, 35)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('vasya_zhuk@gmail.com', 'Vasyl', 'Zhuk', 'waiter19', 3, 37)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('alex_clare@gmail.com', 'Oleksandr', 'Yashuk', 'waiter20', 4, 38)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('yan_step@gmail.com', 'Yan', 'Stepanskiy', 'waiter21', 5, 39)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('kucheryava@gmail.com', 'Valeriya', 'Kucheryava', 'waiter22', 5, 40)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('lyuda@gmail.com', 'Liydmila', 'Karpiuk', 'waiter23', 9, 45)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('svyat@gmail.com', 'Svyatoslav', 'Kononov', 'waiter24', 9, 48)
+INSERT INTO Waiters (email, first_name, last_name, waiter_password, place_id, order_id) VALUES ('aleg_yazzz@gmail.com', 'Oleg', 'Nebabov', 'waiter25', 1, 50)
+
+alter table Waiters 
+add start_career datetime 
+
+update Waiters
+set start_career = '01-01-2013' where waiter_id = 13
+
+
+

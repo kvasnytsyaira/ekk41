@@ -18,3 +18,23 @@ SELECT o.id, t.type, o.price
 FROM objects AS o
 INNER JOIN type_objects AS t
 ON o.id_type=t.id
+
+-- Порахувати скільки об'єктів нерухомості брали участь в укладені угод
+
+SELECT COUNT(DISTINCT(id_obj))
+FROM contracts
+
+--вибрати id, street, price для об'єктів, які мають name - Голоско в таблиці місцезнаходження
+SELECT o.id, o.street, o.price
+FROM objects AS o
+INNER JOIN locations AS l
+ON o.id_location = l.id
+WHERE l.name = 'Голоско'
+
+--вибрати прізвище та ім'я клієнтів, тип яких VIP
+
+SELECT c.name, c.surname, c.email
+FROM clients AS c
+INNER JOIN type_clients AS t
+ON c.id_type = t.id
+WHERE t.id = 'VIP'

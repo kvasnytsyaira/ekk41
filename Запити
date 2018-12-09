@@ -1,0 +1,20 @@
+-- змінити значення '0.00' колонки термін з таблиці контракти, на значення NULL
+
+UPDATE contracts
+SET term = NULL
+WHERE term = '0.00' 
+
+--вибрати ім'я та прізвище клієнтів, які брали участь в укладені угод
+
+SELECT c.id_cl, cl.name, cl.surname
+FROM contracts AS c
+INNER JOIN clients AS cl
+ON c.id_cl = cl.id
+
+
+-- З'єднати таблиці об'єктів і типів об'єктів по ключі
+
+SELECT o.id, t.type, o.price
+FROM objects AS o
+INNER JOIN type_objects AS t
+ON o.id_type=t.id

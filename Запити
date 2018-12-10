@@ -38,3 +38,23 @@ FROM clients AS c
 INNER JOIN type_clients AS t
 ON c.id_type = t.id
 WHERE t.id = 'VIP'
+
+-- вибрати об'єкти які мають 13 умову (option_conditions)
+
+SELECT id_obj
+FROM conditions
+WHERE id_condit = '13'
+
+-- знайти мінімальну ціну серед об'єктів що здаються в оренду
+
+SELECT min(price)
+FROM objects
+WHERE id LIKE '%о'
+ 
+--показати id, вулицю, район, місто, площу для об'єктів площа яких находиться в проміжку від 40 до 60 м2 
+
+SELECT o.id, o.id_location, o.street, l.district, l.city, o.area
+FROM objects AS o
+INNER JOIN locations AS l
+ON o.id_location=l.id
+WHERE o.area between '40' and '60'

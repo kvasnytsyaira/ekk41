@@ -344,3 +344,136 @@ VALUES
 ('198п',	'1301',	'1019',	'1221',	'Лісна',	'35',	'490000')  INSERT INTO objects (id, id_type, id_location, id_owner, street, area, price) VALUES 
 ('199п',	'1308',	'1024',	'1230',	'Тершаковців',	'32',	'224000')  INSERT INTO objects (id, id_type, id_location, id_owner, street, area, price) VALUES 
 ('200о',	'1301',	'1011',	'1222',	'Наукова',	'35',	'4500')
+
+INSERT INTO options_conditions (id, object_option)
+VALUES ('1','без домашніх тварин')  INSERT INTO options_conditions (id, object_option) VALUES 
+('2','без ремонта')  INSERT INTO options_conditions (id, object_option) VALUES 
+('3','без дітей')  INSERT INTO options_conditions (id, object_option) VALUES 
+('4','без побутової техніки')  INSERT INTO options_conditions (id, object_option) VALUES 
+('5','центральне опалення')  INSERT INTO options_conditions (id, object_option) VALUES 
+('6','індивідуальне опалення')  INSERT INTO options_conditions (id, object_option) VALUES 
+('7','з ремонтом')  INSERT INTO options_conditions (id, object_option) VALUES 
+('8','з меблями')  INSERT INTO options_conditions (id, object_option) VALUES 
+('9','з побутовою технікою')  INSERT INTO options_conditions (id, object_option) VALUES 
+('10','студентам')  INSERT INTO options_conditions (id, object_option) VALUES 
+('11','балкон')  INSERT INTO options_conditions (id, object_option) VALUES 
+('12','без балкона')  INSERT INTO options_conditions (id, object_option) VALUES 
+('13','металопластикові вікна')  INSERT INTO options_conditions (id, object_option) VALUES 
+('14','сімейним парам')  INSERT INTO options_conditions (id, object_option) VALUES 
+('15','без суборенди')  INSERT INTO options_conditions (id, object_option) VALUES 
+('16','без посередників')
+
+INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price )
+VALUES  
+('1501',	'119о',	'1143',	'2017-10-12',	'12',	'432')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1502',	'128п',	'1115',	'2017-10-16',	'0',	'209760')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1503',	'86п',	'1124',	'2017-10-18',	'0',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1504',	'57о',	'1116',	'2017-10-19',	'6',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1505',	'165о',	'1145',	'2017-10-19',	'12',	'180')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1506',	'124п',	'1106',	'2017-10-24',	'0',	'59520')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1507',	'99п',	'1135',	'2017-11-04',	'0',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1508',	'74о',	'1128',	'2017-11-08',	'36',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1509',	'103о',	'1145',	'2017-11-08',	'12',	'156')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1510',	'193п',	'1146',	'2017-11-15',	'0',	'87000')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1511',	'24п',	'1139',	'2017-11-15',	'0',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1512',	'139о',	'1129',	'2017-11-17',	'24',	'156')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1513',	'178о',	'1146',	'2017-11-23',	'12',	'2040')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1514',	'148о',	'1132',	'2017-11-28',	'24',	'480')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1515',	'43о',	'1117',	'2017-12-01',	'12',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1516',	'128п',	'1113',	'2017-12-04',	'0',	'209760')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1517',	'179о',	'1122',	'2017-12-05',	'12',	'936')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1518',	'168п',	'1121',	'2017-12-11',	'0',	'510720')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1519',	'92п',	'1118',	'2017-12-18',	'0',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1520',	'121о',	'1139',	'2017-12-20',	'8',	'1032')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1521',	'13о',	'1124',	'2017-12-25',	'12',	'156')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1522',	'86п',	'1140',	'2017-12-27',	'0',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1523',	'74о',	'1103',	'2018-01-02',	'6',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1524',	'55о',	'1143',	'2018-01-03',	'24',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1525',	'61о',	'1109',	'2018-01-08',	'12',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1526',	'74о',	'1144',	'2018-01-11',	'18',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1527',	'16о',	'1110',	'2018-01-13',	'12',	'456')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1528',	'176п',	'1115',	'2018-01-19',	'0',	'444960')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1529',	'51о',	'1105',	'2018-01-26',	'12',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1530',	'67п',	'1137',	'2018-01-29',	'0',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1531',	'162о',	'1134',	'2018-02-04',	'12',	'2280')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1532',	'27п',	'1150',	'2018-02-07',	'0',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1533',	'133о',	'1114',	'2018-02-13',	'12',	'876')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1534',	'161о',	'1118',	'2018-02-17',	'18',	'552')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1535',	'54п',	'1124',	'2018-03-01',	'0',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1536',	'76п',	'1132',	'2018-03-03',	'0',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1537',	'103о',	'1133',	'2018-03-07',	'36',	'156')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1538',	'21о',	'1128',	'2018-03-08',	'24',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1539',	'174о',	'1146',	'2018-03-09',	'6',	'144')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1540',	'36п',	'1147',	'2018-03-12',	'0',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1541',	'172п',	'1102',	'2018-03-28',	'0',	'146880')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1542',	'5п',	'1125',	'2018-04-02',	'0',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1543',	'127п',	'1136',	'2018-04-23',	'0',	'393120')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1544',	'50п',	'1118',	'2018-04-27',	'0',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1545',	'153п',	'1141',	'2018-05-03',	'0',	'411240')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1546',	'23о',	'1107',	'2018-05-24',	'12',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1547',	'56п',	'1129',	'2018-05-28',	'0',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1548',	'67п',	'1149',	'2018-06-04',	'0',	'540')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1549',	'18п',	'1130',	'2018-06-09',	'0',	'162')  INSERT INTO contracts (id, id_obj,id_cl, date_contr, term, ct_price ) VALUES 
+('1550',	'112о',	'1109',	'2018-06-16',	'12',	'132')
+
+INSERT INTO conditions (id_obj, id_condit)
+VALUES 
+('1о',	'2')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('3о',	'6')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('3о',	'9')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('3о',	'16')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('7о',	'14')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('8п',	'8')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('19о',	'1')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('19о',	'8')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('19о',	'15')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('20п',	'11')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('49о',	'5')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('49о',	'13')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('50п',	'16')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('52о',	'3')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('53п',	'7')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('55о',	'4')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('57о',	'12')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('58п',	'12')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('59о',	'15')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('69о',	'10')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('70о',	'6')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('70о',	'8')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('70о',	'9')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('74о',	'1')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('74о',	'2')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('87о',	'6')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('87о',	'13')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('88о',	'3')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('88о',	'4')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('88о',	'10')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('89п',	'5')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('90о',	'7')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('91о',	'7')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('94о',	'11')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('94о',	'14')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('95п',	'8')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('97о',	'1')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('97о',	'8')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('99п',	'2')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('100о',	'8')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('130о',	'3')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('133о',	'4')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('133о',	'5')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('133о',	'10')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('135о',	'9')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('135о',	'11')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('148о',	'13')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('148о',	'14')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('148о',	'15')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('151о',	'16')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('152о',	'12')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('153п',	'8')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('153п',	'9')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('166о',	'8')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('166о',	'11')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('171о',	'15')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('187о',	'3')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('188о',	'13')  INSERT INTO conditions (id_obj, id_condit) VALUES 
+('198п',	'16')
